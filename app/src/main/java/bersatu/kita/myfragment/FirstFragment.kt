@@ -12,18 +12,21 @@ import com.google.android.material.textfield.TextInputEditText
 
 
 class FirstFrament : Fragment() {
+    //deklarasi dari CommunicationViewmodel
     private var communicationViewModel: CommunicationViewModel? = null
+
+    //fungsi yang pertama kali akan di jalankan
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         communicationViewModel = ViewModelProviders.of(requireActivity()).get(CommunicationViewModel::class.java)
     }
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_first,
-            container, false)
+
+    //digunakan untuk membuat View yang pertama kali akan di buka
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return inflater.inflate(R.layout.fragment_first, container, false)
     }
+
+    //digunakan untuk mengisi nilai pada View fragment_first
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -41,6 +44,8 @@ class FirstFrament : Fragment() {
             }
         )
     }
+
+    //menjalankan Objek
     companion object {
         fun newInstance(): FirstFrament {
             return FirstFrament()

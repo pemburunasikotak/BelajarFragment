@@ -17,19 +17,14 @@ class SecondFragment : Fragment() {
             of(requireActivity()).
             get(CommunicationViewModel::class.java)
     }
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_fragment_second,
             container, false)
     }
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?)
-    {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         txtName = view.findViewById(R.id.textViewName)
-        communicationViewModel!!.name.observe(requireActivity(),
-            Observer { s -> txtName!!.text = s })
+        communicationViewModel!!.name.observe(requireActivity(),Observer { s -> txtName!!.text = s })
     }
     companion object {
         fun newInstance(): SecondFragment {
